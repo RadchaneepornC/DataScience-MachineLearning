@@ -15,6 +15,7 @@
  In case that we use GMMs, but has some missing data (don't know some data comes from which Gaussian)
           <ul><details><summary>Jensen Inequality</summary> </details></ul>
           <ul><details><summary>Maximum Evidence Lower Bound (ELBO)</summary></details></ul>
+          <ul><details><summary>Good problems to solve with EM</summary></details></ul>
  
 </details>
 
