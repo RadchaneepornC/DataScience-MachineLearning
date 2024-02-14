@@ -1,4 +1,4 @@
-## PDimensionalityReduction
+## DimensionalityReduction
 <details>
  <summary>Curse of dimensionality</summary>
 </details>
