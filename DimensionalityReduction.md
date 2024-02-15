@@ -1,17 +1,17 @@
 ## DimensionalityReduction
  <details>
- <summary>Curse of dimensionality</summary>
+ <summary>1️⃣Curse of dimensionality</summary>
    <br>
   
- **Curse of dimentionality**
+ **📍Curse of dimentionality**
  
   -  Harder to visualize or see structure of 
   -  Hard to search in high dimension (more runtime)
   -  Need more data to get a good estimation of the data
  
- **To combat the curse of dimensionality**
+ **📍To combat the curse of dimensionality**
  
-  -  **Feature selection**: Keep only "Good" features
+  -  **🌱Feature selection**: Keep only "Good" features
      - Drop features having missing values
      - Drop low variace column (a feature that is a constant)
      - Drop the feature by using forward (increase one by one feature) and backward (decrease one by one feature) elimination 
@@ -34,7 +34,7 @@
 
      
    
-  -  **Feature transformation (Feature extraction)**: Transform the original features into a smaller set of features, New features come from the combination of old features (Greedy algorithm)
+  -  **🌱Feature transformation (Feature extraction)**: Transform the original features into a smaller set of features, New features come from the combination of old features (Greedy algorithm)
 
              F(x1,x2,...,x10) --> (y1, y2)
 
@@ -42,14 +42,14 @@
 
      > **Con:** harder to interpret the model
 
-  **Goals of dimentional reduction**
+  **📍Goals of dimentional reduction**
   -  For better machine learning models
   -  For data visualization
  
 </details>
 
 <details>
- <summary>How to reduce dimension
+ <summary>2️⃣How to reduce dimension
 </summary>
 
  
