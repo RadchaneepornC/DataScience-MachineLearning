@@ -11,7 +11,7 @@
  
  **📍To combat the curse of dimensionality**
  
-  -  **🌱Feature selection**: Keep only "Good" features
+ - **🌱Feature selection**: Keep only "Good" features
      - Drop features having missing values
      - Drop low variace column (a feature that is a constant)
      - Drop the feature by using forward (increase one by one feature) and backward (decrease one by one feature) elimination 
@@ -26,7 +26,7 @@
    1. Use in Hackathon level (time limit days-a week), don't recommend to use in        other cases
    2. Proper methods for feature selection
        - Choose algorithms that handles high dimension well and do selection as a       by product ex Regression with L1 regularization (dan't same as L1 loss),          Tree-based classifiers (random forest, XGBoost)
-       - Generic Algorithm: Optimization method, has objective and decision             variable that we want to change (Natural Selection), this algorithm also          can use for tuning hyperparameters in a neural network, and tuning                augmentation algorithms
+       - Generic Algorithm: Optimization method, has objective and decision             variable that we want to change (Natural Selection), this algorithm also          can use for tuning hyperparameters in a neural network, and tuning                augmentation algorithms 
    
   -  **🌱Feature transformation (Feature extraction)**: Transform the original features into a smaller set of features, New features come from the combination of old features (Greedy algorithm)
 
@@ -61,12 +61,29 @@ Before doing feature transformation, recommend to revise **Linear Algebra**, whi
 </details>
 
 <details>
- <summary>2️⃣How to reduce dimension
-</summary>
+ <summary>2️⃣How to reduce dimension</summary>
+ <br>  
+ 
+ **<li>📍PCA(unsupervised)</li>** solve Eigenvector ordered by Eigen value
+             
+  - goal: reduce dimension, but remain information
+  - min dimensions = N train data 
+       
+   but not suit for classification problem, for this, use LCA instead
+   
+ **<li>📍LCA(supervised)</li>** got normalized Eigenvector
+    
+   - goal for classification
+   - min dimensions = C-1 
+
+
+</details>
 
  
-
-
+ <details>
+ <summary>3️⃣Visualization</summary>
+   <br>
+</details>
  
 </details>
 
