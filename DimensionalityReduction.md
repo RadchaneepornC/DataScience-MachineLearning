@@ -39,13 +39,13 @@
 Before doing feature transformation, recommend to revise **Linear Algebra**, which has following importantant topics:
         
 
-<li> 1. Matrix as a sequence of column vectors</li>
+**<li> 1. Matrix as a sequence of column vectors</li>**
         
-  <img width="400" src="https://github.com/RadchaneepornC/DataScience-MachineLearning/blob/main/Images/LinearAlgebra_matrix1.png" style="display: block; margin-left: auto; margin-right: auto;">
+  <img width="500" src="https://github.com/RadchaneepornC/DataScience-MachineLearning/blob/main/Images/LinearAlgebra_matrix1.png" style="display: block; margin-left: auto; margin-right: auto;">
 
-  <img width="400" src="https://github.com/RadchaneepornC/DataScience-MachineLearning/blob/main/Images/LinearAlgebra_matrix2.png" style="display: block; margin-left: auto; margin-right: auto;">
+  <img width="500" src="https://github.com/RadchaneepornC/DataScience-MachineLearning/blob/main/Images/LinearAlgebra_matrix2.png" style="display: block; margin-left: auto; margin-right: auto;">
 
-  Fig: Imagine matrix multiplication as a sequence of column vectors [source](https://www.youtube.com/results?search_query=Matrix+as+a+sequence+of+column+vectors)
+  **<li> 2. View Eigendecomposition(ED) and Singular Value Decomposition (SVD) as rotations and stretches</li>**
 
   
 
