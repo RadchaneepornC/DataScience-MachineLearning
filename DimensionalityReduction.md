@@ -1,15 +1,48 @@
 ## DimensionalityReduction
-<details>
+ <details>
  <summary>Curse of dimensionality</summary>
    <br>
   
- **curse of dimentionality**
+ **Curse of dimentionality**
  
   -  Harder to visualize or see structure of 
   -  Hard to search in high dimension (more runtime)
   -  Need more data to get a good estimation of the data
+ 
+ **To combat the curse of dimensionality**
+ 
+  -  **Feature selection**: Keep only "Good" features
+     - Drop features having missing values
+     - Drop low variace column (a feature that is a constant)
+     - Drop the feature by using forward (increase one by one feature) and backward (decrease one by one feature) elimination 
 
-  **goals of dimentional reduction**
+
+
+     > **Pro:** Useful when the user wants to know which feature matters
+
+     > **Con:** Hard to select good features automatically
+
+**NOTE:** <br>
+
+0. Ask domain expertise which feature matters
+1. Use in Hackathon level (time limit days-a week), don't recommend to use in other cases
+2. Proper methods for feature selection
+     - Choose algorithms that handles high dimension well and do selection as a by product ex Regression with L1 regularization (dan't same as L1 loss), Tree-based classifiers (random forest, XGBoost)
+     - Generic Algorithm: Optimization method, has objective and decision variable that we want to change (Natural Selection)
+
+
+
+     
+   
+  -  **Feature transformation (Feature extraction)**: Transform the original features into a smaller set of features, New features come from the combination of old features (Greedy algorithm)
+
+             F(x1,x2,...,x10) --> (y1, y2)
+
+     > **Pro:** more powerful
+
+     > **Con:** harder to interpret the model
+
+  **Goals of dimentional reduction**
   -  For better machine learning models
   -  For data visualization
  
@@ -18,7 +51,11 @@
 <details>
  <summary>How to reduce dimension
 </summary>
- abcd
+
+ 
+
+
+ 
 </details>
 
 <details>
