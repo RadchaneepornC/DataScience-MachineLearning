@@ -45,6 +45,8 @@ Before doing feature transformation, recommend to revise **Linear Algebra**, whi
 
   <img width="500" src="https://github.com/RadchaneepornC/DataScience-MachineLearning/blob/main/Images/LinearAlgebra_matrix2.png" style="display: block; margin-left: auto; margin-right: auto;">
 
+  Fig: visualise matrix multiplication as a sequence of column vectors [source](https://www.youtube.com/watch?v=kYB8IZa5AuE&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=5)
+
   **<li> 2. View Eigendecomposition(ED) and Singular Value Decomposition (SVD) as rotations and stretches</li>**
 
   
