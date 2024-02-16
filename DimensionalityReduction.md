@@ -36,8 +36,11 @@
 
      > **Con:** harder to interpret the model
 
-Before doing feature transformation, recommend to revise **Linear Algebra**, which has following importantant topics:
-        
+Before doing feature transformation, recommend to revise **Linear Algebra**, which has following importantant topics in the below topics
+
+
+  -  **🌱Important Linear Algebra Concepts**:
+
 
 **<li> 1. Matrix as a sequence of column vectors</li>**
         
@@ -49,6 +52,34 @@ Before doing feature transformation, recommend to revise **Linear Algebra**, whi
 
   **<li> 2. View Eigendecomposition(ED) and Singular Value Decomposition (SVD) as rotations and stretches</li>**
 
+  **<li> 3.Change basis from x,y coordinates to be on u by using PROJECTION</li>**
+since we will use the concept of projection to project of each feature to the matrix and 
+then maximize the variance after projection using 
+
+                                 argmaxVar(wTx)
+
+
+subject to the constraint that w is a unit vector. This maximization ensures that the chosen principal component (direction) captures the most significant variance present in the data
+
+
+
+
+   
+
+
+  
+  **<li> 4.Covariance Matrix</li>**
+          1. symmetric: real eigen values, eigen vectors are matually orthogonal 
+          2. positive semi-definite(Convex function): semi because sometimes the variance can be zero, eigen              values are nonnegative
+          3. positive definite: eigen values are positive --> garantee invertible
+
+There are two aspects which has the same meaning: 
+
+**Aspect I)** given a set of features as Random variables (RVs) 
+**Aspect II)** see each data points as vector and go to cross product, minute mean, and  average
+Covariance maxtrix in term of the vector view
+- column of matrix stands for each vector of data point
+- row of matrix stands for each feature
   
 
 
@@ -64,7 +95,7 @@ Before doing feature transformation, recommend to revise **Linear Algebra**, whi
  <summary>2️⃣How to reduce dimension</summary>
  <br>  
  
- **<li>📍PCA(unsupervised)</li>** solve Eigenvector ordered by Eigen value
+ **<li>📍Principle Component Analysis: PCA(unsupervised)</li>** solve Eigenvector ordered by Eigen value
              
   - goal: reduce dimension, but remain information
   - min dimensions = N train data 
