@@ -146,6 +146,11 @@ std_devs = np.std(X, axis=0, ddof=1)
 Z = (X - means) / std_devs
 ```
 
+**NOTE**
+Standardizing data before applying PCA ensures that all variables contribute equally to the analysis, improves interpretability, and enhances numerical stability, leading to more reliable and meaningful results
+
+
+
  <li>Step 2: Calculate the Covariance Matrix</li>
 
    $$\text{Cov}(X_i, X_j) = \frac{1}{n-1} \sum_{k=1}^{n} (x_{ki} - \mu_i)(x_{kj} - \mu_j)$$
