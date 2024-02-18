@@ -101,6 +101,31 @@ Covariance maxtrix in term of the vector view
   - min dimensions = N train data 
        
    but not suit for classification problem, for this, use LCA instead
+
+PCA does indeed transform a set of possibly correlated variables into a smaller number of uncorrelated variables (the principal components), the goal is to remove the least important principle components (the least of the variance one in the dataset) 
+
+**Ex of PCA**
+
+$$ 
+X =
+\begin{bmatrix}
+1 & 2 \\
+3 & 4 \\
+5 & 6
+\end{bmatrix}
+$$
+
+
+
+
+
+Step of PCA are following belows:
+I) create principal components which are guaranteed to be uncorrelated if the data is projected onto them correctly
+
+II) select the first few principal components(represent in eigenvectors), those with the largest eigenvalues(retain the majority of the useful information: max variance), and disregard the others, this step maybe include sub-step about optimization
+
+  - Lagrange multiplier take a responsibility of maximizing the variance of the projected data while subjecting to the constraint the projection vector(principal component) has unit length (This standardization allows us to focus solely on the direction in which unit vector points, rather than being influenced by its magnitude, in othe words, allow us to compare the variance captured by different vectors measured on the same scale)
+ 
    
  **<li>📍LCA(supervised)</li>** got normalized Eigenvector
     
