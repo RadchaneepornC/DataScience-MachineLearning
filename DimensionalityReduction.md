@@ -113,6 +113,8 @@ $$X = \begin{bmatrix}
 5 & 6 \\
 \end{bmatrix}$$
 
+
+
 ```python
 import numpy as np
 
@@ -152,7 +154,7 @@ for the standardized data, the means are zero, so the covariance matrix simplifi
 
 $$\Sigma = \frac{1}{n - 1} Z^T Z$$
 
-where Z = the matrix of standardized data
+where Z = the matrix of standardized data, Σ = the covariance matrix 
 
 ```python
 # Step 2: Calculate the covariance matrix
@@ -163,8 +165,9 @@ Z, covariance_matrix
 
 ```
 
-result:
-           (array([[-1., -1.],
+result: <br>
+
+            (array([[-1., -1.],
                    [ 0.,  0.],
                    [ 1.,  1.]]),
              array([[1., 1.],
@@ -175,14 +178,102 @@ The eigenvectors point in the direction of the principal components, and the eig
 
 
 
+$$\det(\Sigma - \lambda I) = 0$$
+
+
+where: I = the identity matrix, λ = the eigenvalues, once the eigenvalues are found, we can find the eigenvectors by solving:
+
+
+$$(\Sigma - \lambda I)w = 0$$
+
+
+```python
+# Step 3: Compute eigenvectors and eigenvalues
+eigenvalues, eigenvectors = np.linalg.eig(covariance_matrix)
+
+# Display the eigenvalues and eigenvectors
+eigenvalues, eigenvectors
+
+```
+
+Eigenvalues(λ) = 
+
+         (array([2., 0.])
+
+
+The eigenvalues tell us the amount of variance captured by each principal component. The first eigenvalue (2) captures all the variance in the data, while the second eigenvalue is zero, meaning it captures no variance
 
 
 
 
-II) select the first few principal components(represent in eigenvectors), those with the largest eigenvalues(retain the majority of the useful information: max variance), and disregard the others, this step maybe include sub-step about optimization
+Eigen vectors = 
 
-  - Lagrange multiplier take a responsibility of maximizing the variance of the projected data while subjecting to the constraint the projection vector(principal component) has unit length (This standardization allows us to focus solely on the direction in which unit vector points, rather than being influenced by its magnitude, in othe words, allow us to compare the variance captured by different vectors measured on the same scale)
- 
+
+           array([[ 0.70710678, -0.70710678],
+                  [ 0.70710678,  0.70710678]]))
+
+
+For this step, we sometimes apply the concept of **Lagrange multiplier** 
+
+Objective:
+maximizing the variance of the projected data, as formulated as 
+
+$$w^T \Sigma w$$
+
+
+while subjecting to the constraint the projection vector(principal component) has unit length (This standardization allows us to focus solely on the direction in which unit vector points, rather than being influenced by its magnitude, in othe words, allow us to compare the variance captured by different vectors measured on the same scale), which is expressed as 
+
+
+$$w^T w = 1$$
+
+
+The Lagrange multiplier (λ) is introduced to incorporate this constraint into the optimization problem. The Lagrangian is set up as:
+
+$$L = \text{Var}(w^T x) - \lambda (w^T w - 1)$$
+
+
+$$\text{Var}(w^T x) = E\left[(w^T x - E[w^T x])^2\right] = w^T \Sigma w$$
+
+
+$$L = w^T \Sigma w - \lambda (w^T w - 1)$$
+
+Differentiating this Lagrangian with respect to w and setting it to zero leads to the eigenvalue equation:
+
+$$\nabla_w L, \frac{\partial L}{\partial w} = 2\Sigma w - 2\lambda w = 0$$
+
+
+$$\Sigma w = \lambda w$$
+
+
+solving this equation gives us the eigenvectors (the directions of the principal components) and their corresponding eigenvalues (which represent the variance captured by each principal component)
+
+
+
+**II) select the first few principal components(represent in eigenvectors), those with the largest eigenvalues(retain the majority of the useful information: max variance), and disregard the others, this step maybe include sub-step about optimization**
+
+```python
+# Step 5: Transform the data using the first eigenvector (principal component)
+# Select the first eigenvector
+principal_component = eigenvectors[:, 0]
+
+# Transform the data
+T = Z.dot(principal_component)
+
+# Display the transformed data
+T
+```
+
+
+T = 
+
+                 array([-1.41421356, 0.000000,  1.41421356])
+
+
+This transformed data is a one-dimensional representation of the original two-dimensional data, capturing the most significant variance
+
+
+
+  
    
  **<li>📍LCA(supervised)</li>** got normalized Eigenvector
     
