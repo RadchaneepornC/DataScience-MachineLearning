@@ -106,21 +106,78 @@ PCA does indeed transform a set of possibly correlated variables into a smaller 
 
 **Ex of PCA**
 
-$$ 
-X =
-\begin{bmatrix}
+
+$$X = \begin{bmatrix}
 1 & 2 \\
 3 & 4 \\
-5 & 6
-\end{bmatrix}
-$$
+5 & 6 \\
+\end{bmatrix}$$
+
+```python
+import numpy as np
+
+# Original data
+X = np.array([[1, 2], [3, 4], [5, 6]])
+
+```
+
+
+**Step of PCA are following main steps belows:** <br>
+
+**I) create principal components which are guaranteed to be uncorrelated if the data is projected onto them correctly**
+
+   <li>Step 1: Standardize the Data - Standardize each feature to have a mean of zero and a standard deviation of one by using this formula</li>
+
+$$z=\dfrac{x-\mu}{\sigma}$$
+
+where: z = the standardized value, x = the original value, μ = the mean of the feature, and 
+σ = the standard deviation of the feature
+
+```python
+# Calculate the mean of each feature
+means = np.mean(X, axis=0)
+
+# Calculate the standard deviation of each feature
+std_devs = np.std(X, axis=0, ddof=1)
+
+# Standardize the data
+Z = (X - means) / std_devs
+```
+
+ <li>Step 2: Calculate the Covariance Matrix</li>
+
+   $$\text{Cov}(X_i, X_j) = \frac{1}{n-1} \sum_{k=1}^{n} (x_{ki} - \mu_i)(x_{kj} - \mu_j)$$
+
+for the standardized data, the means are zero, so the covariance matrix simplifies to 
+
+$$\Sigma = \frac{1}{n - 1} Z^T Z$$
+
+where Z = the matrix of standardized data
+
+```python
+# Step 2: Calculate the covariance matrix
+covariance_matrix = np.cov(Z, rowvar=False)
+
+# Display the standardized data and the covariance matrix
+Z, covariance_matrix
+
+```
+
+result:
+           (array([[-1., -1.],
+                   [ 0.,  0.],
+                   [ 1.,  1.]]),
+             array([[1., 1.],
+                   [1., 1.]]))
+
+<li>Step 3: Compute Eigenvectors and Eigenvalues</li> 
+The eigenvectors point in the direction of the principal components, and the eigenvalues give the amount of variance captured by each principal component
 
 
 
 
 
-Step of PCA are following belows:
-I) create principal components which are guaranteed to be uncorrelated if the data is projected onto them correctly
+
 
 II) select the first few principal components(represent in eigenvectors), those with the largest eigenvalues(retain the majority of the useful information: max variance), and disregard the others, this step maybe include sub-step about optimization
 
