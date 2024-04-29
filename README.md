@@ -11,3 +11,4 @@
 
 ## 🌱 **Outlines of my learning:** 🌱
 
+### [Dimensionality Reduction](https://github.com/RadchaneepornC/DataScience-MachineLearning/blob/main/DimensionalityReduction.md)
